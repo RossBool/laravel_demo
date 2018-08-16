@@ -22,12 +22,11 @@ Route::get('/api/user/{id}', function (\App\User $user) {
 });
 
 //指定路由方式
-Route::match(['GET', 'POST'], '/', function()
-{
+Route::match(['GET', 'POST'], '/', function () {
     return $_SERVER['HTTP_HOST'];
 });
 //所有的路由方式
-Route::any('/',function (){
+Route::any('/', function () {
 
 });
 
@@ -42,7 +41,7 @@ Route::group(['prefix' => 'posts'], function () {
     Route::get('/', function () {
         return view('welcome');
     });
-//get带参数路由请求
+    //get带参数路由请求
     Route::get('/user_id/{id}', function ($id) {
         return $id;
     });
